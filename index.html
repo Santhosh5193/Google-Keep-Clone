@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  <link rel="stylesheet" href="./index.css" />
+  <title>Document</title>
+</head>
+
+<body>
+  <nav>
+    <div class="navicon">
+      <i class="fas fa-bars burgericon" onclick="asidewrap()"></i>
+      <div class="text">
+        <img class="gb_Nd gb_Od" src="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png" srcset="
+              https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png 1x,
+              https://www.gstatic.com/images/branding/product/2x/keep_2020q4_48dp.png 2x
+            " alt="" aria-hidden="true" role="presentation" style="width: 45px; height: 45px" />
+        <p>Keep</p>
+      </div>
+      <form class="searchbar">
+        <label for="search"><i class="fa fa-search"></i></label>
+        <input type="text" placeholder="Search.." id="search" name="search" oninput="onSearch()" />
+        <button id="resetbutton" style="display: none">&times;</button>
+      </form>
+    </div>
+    <div class="theme" id="theme">
+      <div class="gridlist">
+        <img id="listview" src="./icons/list_view_24px.svg" alt="" />
+        <img id="gridview" style="display: none" src="./icons/download.svg" alt="">
+
+      </div>
+      <div class="themeicon"></div>
+      <img id="lighttheme" src="./icons/sun-svgrepo-com.svg" alt="sd" style="display: none" />
+      <img id="darktheme" src="./icons/moon-svgrepo-com (1).svg" alt="dfsdzf" />
+
+    </div>
+    </div>
+  </nav>
+  <aside>
+    <ul>
+      <div class="notes active" id="notes" onclick="changedirectorytonotes()">
+        <img src="./icons/idea.svg" alt="" class="theme-icon" />
+        <p id="asidenotes">Notes</p>
+      </div>
+      <div class="archive" id="archive" onclick="changedirectorytoarchive()">
+        <img src="./icons/archive.svg" alt="" class="theme-icon" />
+        <p id="archivenotes">Archive</p>
+      </div>
+      <div class="trash" id="trash" onclick="changedirectorytobin()">
+        <img src="./icons/bin.svg" alt="" class="theme-icon" />
+        <p id="binnotes">Bin</p>
+      </div>
+    </ul>
+  </aside>
+
+  <section>
+    <div class="notesection" id="notesection">
+      <div class="inputcard" id="inputcard">
+        <div class="card" id="card">
+          <input type="text" placeholder="Take a note.." />
+        </div>
+        <div class="textcard editItem" id="textcard" style="display: none;">
+         <div class="inputs">
+              <textarea name="" id="title" placeholder="Title"></textarea><br />
+              <textarea name="" id="note" placeholder="Take a note"></textarea>
+              <button id="closebtn"> 
+                <i class="fa-solid fa-plus"></i> Add Notes
+              </button>
+         </div>
+        </div>
+      </div>
+      <div class="pinItemsdisplay" id="pinItemsdisplay">
+        <h4 class="Pinned" id="Pinned" style="display: none;">PINNED</h4>
+        <div class="pinnotesdisplay" id="pinnotesdisplay"></div>
+      </div>
+      <div class="carddisplay" id="carddisplay">
+        <h4 class="others" id="others" style="display: none;">NOTES</h4>
+        <div class="notesdisplay" id="notesdisplay"></div>
+      </div>
+    </div>
+    <div class="archiveitems" id="archiveitems"></div>
+    <div class="binitems" id="binitems"></div>
+  </section>
+  <div id="overlay"></div>
+
+  <script src="./index.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>
